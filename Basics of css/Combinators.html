@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<style>
+  div span {
+    /* descendant ==>span is any child of div*/
+    color: red
+  }
+
+  h2+p {
+    /* Adjacent sibling ==> p that comes immediately after h2 */
+    color: blue;
+  }
+
+  p~span {
+    /* Sibling ==> p and span are on same level */
+    background-color: cornsilk;
+  }
+
+  div>h2 {
+    /* Child ==> h2 must be direct child of div*/
+    color: darkred;
+  }
+</style>
+
+<body>
+  <div>
+    <h2>
+      This is a heading
+    </h2>
+    <p>This is a paragraph</p>
+    <span>Descendant selector</span>
+    <article>
+      <h2>
+        This is a heading
+      </h2>
+    </article>
+    <span>Descendant selector</span>
+    <p>This is a paragraph</p>
+  </div>
+</body>
+
+</html>
