@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Transitions</title>
+  <style>
+    .size {
+      width: 100px;
+      height: 50px;
+      background: red;
+      color: azure;
+      transition: width 2s, height 4s;
+      margin: 50px;
+    }
+
+    .size:hover {
+      width: 300px;
+      height: 100px;
+    }
+
+    .transform {
+      margin: 50px;
+      width: 100px;
+      height: 100px;
+      background: red;
+      transition:
+        /*width 2s, height 2s, background 2s, transform 2s;*/
+        all 2s
+    }
+
+    .transform:hover {
+      width: 200px;
+      background: blue;
+      height: 200px;
+      transform: rotate(360deg);
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="size">
+    size hover
+  </div>
+  <div class="transform">
+    Transition + Transform
+  </div>
+</body>
+
+</html>
