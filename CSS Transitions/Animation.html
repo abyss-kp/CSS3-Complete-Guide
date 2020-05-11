@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Animations</title>
+</head>
+<style>
+  .container {
+    display: flex;
+    height: 100%;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+
+  }
+
+  .color {
+    width: 100px;
+    height: 100px;
+    background-color: red;
+    animation-name: color;
+    animation-duration: 6s;
+  }
+
+  @keyframes color {
+    from {
+      background-color: red;
+    }
+
+    to {
+      background-color: yellow;
+    }
+  }
+
+  .motion {
+    width: 100px;
+    height: 100px;
+    background-color: red;
+    position: relative;
+    animation-name: motion;
+    animation-duration: 4s;
+    animation-iteration-count: infinite;
+  }
+
+  @keyframes motion {
+    0% {
+      background-color: red;
+      left: 0px;
+      top: 0px;
+    }
+
+    25% {
+      background-color: yellow;
+      left: 200px;
+      top: 0px;
+    }
+
+    50% {
+      background-color: blue;
+      left: 200px;
+      top: 200px;
+    }
+
+    75% {
+      background-color: green;
+      left: 0px;
+      top: 200px;
+    }
+
+    100% {
+      background-color: red;
+      left: 0px;
+      top: 0px;
+    }
+  }
+
+  .transitionFunction div {
+    width: 100px;
+    height: 50px;
+    background-color: red;
+    font-weight: bold;
+    position: relative;
+    animation: mymove 5s infinite;
+  }
+
+  #div1 {
+    animation-timing-function: linear;
+  }
+
+  #div2 {
+    animation-timing-function: ease;
+  }
+
+  #div3 {
+    animation-timing-function: ease-in;
+  }
+
+  #div4 {
+    animation-timing-function: ease-out;
+  }
+
+  #div5 {
+    animation-timing-function: ease-in-out;
+  }
+
+  @keyframes mymove {
+    from {
+      left: 0px;
+    }
+
+    to {
+      left: 300px;
+    }
+  }
+
+  #grad {
+    height: 100px;
+    color: chartreuse;
+    text-align: center;
+    padding-top: 40px;
+    box-sizing: border-box;
+    background-image: linear-gradient(to right, rgba(255, 0, 0, 1), rgba(255, 0, 0, 0));
+    animation: loading 700ms infinite ease-in-out;
+  }
+
+  @keyframes loading {
+    0% {
+      background-image: linear-gradient(to right, rgba(255, 0, 0, 1), rgba(255, 0, 0, 0));
+    }
+
+    50% {
+      background-image: linear-gradient(to right, rgba(255, 0, 0, 0), rgba(255, 0, 0, 1), rgba(255, 0, 0, 0));
+    }
+
+    80% {
+      background-image: linear-gradient(to right, rgba(255, 0, 0, 0), rgba(255, 0, 0, 1));
+    }
+  }
+</style>
+
+<body>
+  <div class="container">
+    <div class="color">
+      color
+    </div>
+    <div class="motion">
+      motion
+    </div>
+  </div>
+  <div class="transitionFunction">
+    <div id="div1">linear</div>
+    <div id="div2">ease</div>
+    <div id="div3">ease-in</div>
+    <div id="div4">ease-out</div>
+    <div id="div5">ease-in-out</div>
+  </div>
+  <div class="loader">
+    <div id="grad">LOADER</div>
+  </div>
+</body>
+
+</html>
