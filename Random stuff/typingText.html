@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css?family=Source+Code+Pro');
+
+    body {
+      padding: 40px;
+    }
+
+    p {
+      font-family: 'Source Code Pro', monospace;
+    }
+  </style>
+</head>
+
+<body>
+  <p id="txt"> </p>
+</body>
+<script>
+  var content = 'If life is so blue, then select another colour, from the rainbow';
+  var arr = content.split(',');
+  var ele = arr.map(line =>
+    `<span>${line.split("").join('</span><span>')} </span>`
+  ).join("<span><br></span>")
+  console.log(ele)
+  var newElement = document.createElement('div');
+  newElement.innerHTML = ele;
+  console.log(newElement)
+  let para = document.getElementById("txt")
+  newElement.querySelectorAll("span").forEach(tag => {
+    tag.style.display = "none";
+    para.appendChild(tag)
+  })
+  para.querySelectorAll("span").forEach((e, i) => {
+      console.log("1")
+      e.style.cssText = "display: inline;opacity:0;"
+      setTimeout(() => {
+        e.style.opacity = 1
+      }
+        ,100*i)
+    })
+</script>
+
+</html>
